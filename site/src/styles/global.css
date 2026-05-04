@@ -1,0 +1,13 @@
+@layer base {
+  :root {
+    --white: #fff;
+    --black: #1a1a1a;
+    --primary: #d35400;
+    --primary-light: #ffa568;
+    --primary-bg: #fff0e5;
+    --border: #888;
+    --border-light: #ccc;
+    --gray-bg: #f4f4f4;
+    --z-header: 100;
+  }
+}
