@@ -1,5 +1,6 @@
 ## メモ
 
+- https://zakzakst.github.io/ai-practice2/
 - https://docs.astro.build/ja/reference/cli-reference/#astro-preferences
 - https://lucide.dev/icons/
 
