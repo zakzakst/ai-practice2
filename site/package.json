@@ -13,6 +13,7 @@
     "hygen-component": "hygen component with-prompt",
     "stylelint": "stylelint --fix ./src/styles/**/*.css",
     "prettier": "prettier . --write",
+    "htmlhint": "htmlhint ./dist/**/*.html",
     "tsc": "tsc"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "htmlhint": "^1.9.2",
     "hygen": "^6.2.11",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
