@@ -16,5 +16,36 @@
     --text-color-link-hover: #00118f;
     --text-color-link-active: #c74700;
     --outline-color-focus: #000;
+    --border-color-black: #000;
+    --border-color-gray: #767676;
+    --border-color-gray-light: #949494;
   }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
 }

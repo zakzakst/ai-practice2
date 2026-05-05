@@ -1,24 +1,34 @@
 ---
-import "@styles/common/breadcrumb.css";
+import "@styles/common/breadcrumbs.css";
+
+import type { HTMLAttributes } from "astro/types";
+import { ChevronRight } from "@lucide/astro";
 
 import type { LinkItem } from "@lib/types";
+import { getRootRelativePath } from "@lib/utils";
+import Link from "@components/common/Link.astro";
 
-interface Props {
+interface Props extends HTMLAttributes<"nav"> {
   items: LinkItem[];
 }
-const { items } = Astro.props;
+const { items, class: className, ...rest } = Astro.props;
 ---
 
-<ul>
-  {
-    items.map((item, index) => (
-      <li>
-        {items.length === index ? (
-          <span>{item.label}</span>
+<nav class:list={["common-breadcrumbs", className]} {...rest}>
+  <ol class="common-breadcrumbs__list">
+    {
+      items.map((item, index) => {
+        return items.length === index + 1 ? (
+          <li class="common-breadcrumbs__list-item" aria-current="page">
+            <span>{item.label}</span>
+          </li>
         ) : (
-          <a href={item.path}>{item.label}</a>
-        )}
-      </li>
-    ))
-  }
-</ul>
+          <li class="common-breadcrumbs__list-item">
+            <Link href={getRootRelativePath(item.path)}>{item.label}</Link>
+            <ChevronRight class="common-breadcrumbs__list-item-icon" />
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

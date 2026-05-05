@@ -1,5 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import Button from "@components/common/Button.astro";
+import Divider from "@components/common/Divider.astro";
 import Link from "@components/common/Link.astro";
 ---
 
@@ -8,5 +11,22 @@ import Link from "@components/common/Link.astro";
   >文中のリンク
   <br />
   <Link class="aaa" href="/test" target="_blank">test</Link>
+  <Divider />
+  <Divider color="black" />
+  <Divider color="gray-light" />
+  <Divider color="gray" />
   <p>{import.meta.env.DOMAIN}</p>
+  <Breadcrumbs
+    items={[
+      {
+        path: "/",
+        label: "TOP",
+      },
+      {
+        path: "/hoge",
+        label: "HOGE",
+      },
+    ]}
+  />
+  <Button>button</Button>
 </Layout>

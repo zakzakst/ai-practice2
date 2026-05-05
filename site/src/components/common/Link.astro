@@ -8,6 +8,8 @@ interface Props extends HTMLAttributes<"a"> {}
 const { target, class: className, ...rest } = Astro.props;
 ---
 
-<a class:list={["common-link", className]} {...rest}>
-  <slot />{target === "_blank" && <ExternalLink class="common-link__icon" />}
-</a>
+<a class:list={["common-link", className]} {...rest}
+  ><slot />{
+    target === "_blank" && <ExternalLink class="common-link__icon" />
+  }</a
+>
