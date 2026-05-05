@@ -15,10 +15,10 @@ import PageProgressBar from "@components/common/PageProgressBar.astro";
 interface Props {
   title?: string;
   description?: string;
-  // TODO: OGP関連の設定
+  ogImage?: string;
   breadcrumbs?: LinkItem[];
 }
-const { title, description, breadcrumbs } = Astro.props;
+const { title, description, ogImage, breadcrumbs } = Astro.props;
 ---
 
 <!doctype html>
@@ -34,6 +34,22 @@ const { title, description, breadcrumbs } = Astro.props;
     <link rel="icon" href={getRootRelativePath("/favicon.ico")} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description || SiteDescription} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description || SiteDescription} />
+    <meta
+      property="og:title"
+      content={title ? `${title} | ${SiteName}` : SiteName}
+    />
+    <meta
+      property="og:url"
+      content={`${import.meta.env.DOMAIN}${import.meta.env.BASE}`}
+    />
+    <meta
+      property="og:image"
+      content={getRootRelativePath(ogImage || "/images/ogp.png")}
+    />
+    <meta property="og:site_title" content={SiteName} />
     <title>{title ? `${title} | ${SiteName}` : SiteName}</title>
   </head>
   <body class="layouts-default">

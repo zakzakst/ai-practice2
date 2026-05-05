@@ -1,0 +1,23 @@
+.common-accordion {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--border-color-gray-light);
+}
+
+.common-accordion__summary {
+  position: relative;
+  display: block;
+  padding: 0.875rem 1rem 0.875rem 24px;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.common-accordion__summary-icon {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.375rem;
+}
