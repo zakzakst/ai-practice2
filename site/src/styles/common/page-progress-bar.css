@@ -1,0 +1,29 @@
+.common-page-progress-bar {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: calc(var(--z-header) + 1);
+  height: 6px;
+  background-color: var(--bg-color-white);
+}
+
+.common-page-progress-bar__gauge {
+  width: 0%;
+  height: 100%;
+  background-color: var(--bg-color-primary);
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .common-page-progress-bar__gauge {
+      animation: common-page-progress-bar-scroll linear;
+      animation-timeline: scroll();
+    }
+
+    @keyframes common-page-progress-bar-scroll {
+      to {
+        width: 100%;
+      }
+    }
+  }
+}

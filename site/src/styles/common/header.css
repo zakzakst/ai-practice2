@@ -1,3 +1,6 @@
-.header {
-  color: red;
+.common-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: var(--bg-color-white);
 }
