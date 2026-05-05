@@ -17,6 +17,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "@lucide/astro": "^1.14.0",
     "astro": "^6.2.2"
   },
   "devDependencies": {
