@@ -1,1 +1,109 @@
-/* .common-button {} */
+.common-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-underline-offset: 0.1875rem;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5rem;
+
+  &:hover {
+    text-decoration-line: underline;
+  }
+
+  &:active {
+    text-decoration-line: underline;
+  }
+
+  &:focus-visible {
+    outline: 4px solid var(--outline-color-focus);
+    outline-offset: 0.125rem;
+  }
+
+  &[aria-disabled="true"] {
+    pointer-events: none;
+  }
+
+  &[data-variant="solid-fill"] {
+    color: var(--text-color-white);
+    background-color: var(--bg-color-primary);
+
+    &:hover {
+      background-color: var(--bg-color-primary-hover);
+    }
+
+    &:active {
+      background-color: var(--bg-color-primary-hover);
+    }
+
+    &[aria-disabled="true"] {
+      background-color: var(--bg-color-disabled);
+    }
+  }
+
+  &[data-variant="outline"] {
+    color: var(--bg-color-primary);
+    background-color: var(--bg-color-white);
+    border-color: currentcolor;
+
+    &:hover {
+      background-color: var(--bg-color-primary-hover-light);
+    }
+
+    &:active {
+      background-color: var(--bg-color-primary-active-light);
+    }
+
+    &[aria-disabled="true"] {
+      color: var(--bg-color-disabled);
+    }
+  }
+
+  &[data-variant="text"] {
+    color: var(--bg-color-primary);
+    text-decoration-line: underline;
+    background-color: var(--bg-color-white);
+
+    &:hover {
+      text-decoration-thickness: 0.1875rem;
+      background-color: var(--bg-color-primary-hover-light);
+    }
+
+    &:active {
+      background-color: var(--bg-color-primary-active-light);
+    }
+
+    &[aria-disabled="true"] {
+      color: var(--bg-color-disabled);
+    }
+  }
+
+  &[data-size="lg"] {
+    min-width: 8.5rem;
+    min-height: 3.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  &[data-size="md"] {
+    min-width: 6rem;
+    min-height: 3rem;
+    padding: 0.5rem 1rem;
+  }
+
+  &[data-size="sm"] {
+    min-width: 5rem;
+    min-height: 2.25rem;
+    padding: 0.125rem 0.75rem;
+  }
+
+  &[data-size="xs"] {
+    min-height: 1.75rem;
+    padding: 0.125rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
