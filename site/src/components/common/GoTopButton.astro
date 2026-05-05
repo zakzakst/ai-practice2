@@ -9,6 +9,7 @@ const { "aria-label": ariaLabel, class: className, ...rest } = Astro.props;
 ---
 
 <script>
+  // TODO: 考える。スクリプトの記述箇所どこにすべきか（コンポーネントではなくlayoutやpageに記載したほうがいい？）
   import { initGoTopButton } from "@scripts/common/go-top-button";
 
   initGoTopButton();

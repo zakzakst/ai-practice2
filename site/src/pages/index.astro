@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Default.astro";
+import Accordion from "@components/common/Accordion.astro";
 import Button from "@components/common/Button.astro";
 import ButtonLink from "@components/common/ButtonLink.astro";
 import Divider from "@components/common/Divider.astro";
@@ -53,5 +54,9 @@ import Spacer from "@components/common/Spacer.astro";
   <ButtonLink href="#" size="md">button</ButtonLink>
   <ButtonLink href="#" size="sm">button</ButtonLink>
   <ButtonLink href="#" size="xs">button</ButtonLink>
+  <Accordion>
+    <Fragment slot="summary">summary</Fragment>
+    <p>content</p>
+  </Accordion>
   <Spacer />
 </Layout>

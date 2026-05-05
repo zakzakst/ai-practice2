@@ -1,0 +1,23 @@
+---
+import "@styles/common/accordion.css";
+
+import type { HTMLAttributes } from "astro/types";
+import { ChevronDown } from "@lucide/astro";
+
+interface Props extends HTMLAttributes<"details"> {}
+const { class: className, ...rest } = Astro.props;
+---
+
+<details class:list={["common-accordion", className]} {...rest}>
+  <summary class="common-accordion__summary">
+    <span class="common-accordion__summary-icon">
+      <ChevronDown class="common-accordion__summary-icon-svg" />
+    </span>
+    <div>
+      <slot name="summary" />
+    </div>
+  </summary>
+  <div class="common-accordion__content">
+    <slot />
+  </div>
+</details>
