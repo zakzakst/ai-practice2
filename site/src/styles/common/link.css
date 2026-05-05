@@ -1,0 +1,33 @@
+.common-link {
+  color: var(--text-color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.1875rem;
+
+  &:visited {
+    color: var(--text-color-link-visited);
+  }
+
+  &:hover {
+    color: var(--text-color-link-hover);
+    text-decoration-thickness: 0.1875rem;
+  }
+
+  &:active {
+    color: var(--text-color-link-active);
+    text-decoration-thickness: 1px;
+  }
+
+  &:focus-visible {
+    outline: 4px solid var(--outline-color-focus);
+    border-radius: 0.25rem;
+  }
+}
+
+.common-link__icon {
+  display: inline;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.1875rem;
+  margin-left: 0.1875rem;
+  vertical-align: middle;
+}

@@ -1,13 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/prettierrc",
   "importOrder": [
+    "^(astro/(.*)$)|^(astro$)",
     "<THIRD_PARTY_MODULES>",
     "",
-    "^@/lib/(.*)$",
-    "^@/scripts/(.*)$",
-    "^@/styles/(.*)$",
-    "^@/layouts/(.*)$",
-    "^@/components/(.*)$",
+    "^@lib/(.*)$",
+    "^@scripts/(.*)$",
+    "^@styles/(.*)$",
+    "^@layouts/(.*)$",
+    "^@components/(.*)$",
     "^[./]"
   ],
   "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-astro"],

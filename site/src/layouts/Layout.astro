@@ -1,9 +1,10 @@
 ---
 import "@styles/global.css";
 
+import { SiteDescription, SiteName } from "@lib/constants";
+import { getRootRelativePath } from "@lib/utils";
 import Footer from "@components/common/Footer.astro";
 import Header from "@components/common/Header.astro";
-import { SiteDescription, SiteName } from "@lib/constants";
 
 interface Props {
   title?: string;
@@ -17,8 +18,12 @@ const { title, description } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={getRootRelativePath("/favicon.svg")}
+    />
+    <link rel="icon" href={getRootRelativePath("/favicon.ico")} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description || SiteDescription} />
     <title>{title ? `${title} | ${SiteName}` : SiteName}</title>

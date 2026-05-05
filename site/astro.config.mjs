@@ -1,5 +1,10 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { loadEnv } from "vite";
 
-// https://astro.build/config
-export default defineConfig({});
+const { DOMAIN, BASE } = loadEnv(process.env.NODE_ENV || "", process.cwd(), "");
+
+export default defineConfig({
+  site: DOMAIN,
+  base: BASE,
+});
