@@ -16,5 +16,8 @@
     --text-color-link-hover: #00118f;
     --text-color-link-active: #c74700;
     --outline-color-focus: #000;
+    --border-color-black: #000;
+    --border-color-gray: #767676;
+    --border-color-gray-light: #949494;
   }
 }

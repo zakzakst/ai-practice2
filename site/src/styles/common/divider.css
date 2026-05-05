@@ -1,0 +1,16 @@
+.common-divider {
+  border-width: 0;
+  border-top-width: 1px;
+
+  &[data-color="black"] {
+    border-color: var(--border-color-black);
+  }
+
+  &[data-color="gray"] {
+    border-color: var(--border-color-gray);
+  }
+
+  &[data-color="gray-light"] {
+    border-color: var(--border-color-gray-light);
+  }
+}
