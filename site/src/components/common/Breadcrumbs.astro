@@ -1,15 +1,24 @@
 ---
 import "@styles/common/breadcrumb.css";
+
 import type { Link } from "@lib/types";
+
 interface Props {
-  items: Link[]
+  items: Link[];
 }
 const { items } = Astro.props;
 ---
 
 <ul>
-  {items.map((item, index) => (
-    <li>
-      {items.length === index ? <span>{item.label}</span> : <a href={item.path}>{item.label}</a>}</li>
-  ))}
+  {
+    items.map((item, index) => (
+      <li>
+        {items.length === index ? (
+          <span>{item.label}</span>
+        ) : (
+          <a href={item.path}>{item.label}</a>
+        )}
+      </li>
+    ))
+  }
 </ul>
