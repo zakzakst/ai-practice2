@@ -11,6 +11,7 @@
     --z-header: 100;
 
     /* colors */
+    --text-color-white: #fff;
     --text-color-link: #00118f;
     --text-color-link-visited: #8b008b;
     --text-color-link-hover: #00118f;
@@ -19,6 +20,14 @@
     --border-color-black: #000;
     --border-color-gray: #767676;
     --border-color-gray-light: #949494;
+    --bg-color-white: #fff;
+    --bg-color-black: #000;
+    --bg-color-primary: #0017c1;
+    --bg-color-primary-hover: #00118f;
+    --bg-color-primary-hover-light: #c5d7fb;
+    --bg-color-primary-active: #000060;
+    --bg-color-primary-active-light: #9db7f9;
+    --bg-color-disabled: #b3b3b3;
   }
 }
 
@@ -40,6 +49,7 @@ dl,
 dd,
 ul,
 ol,
+button,
 hr {
   padding: 0;
   margin: 0;
@@ -48,4 +58,9 @@ hr {
 ul,
 ol {
   list-style: none;
+}
+
+button {
+  text-transform: none;
+  cursor: pointer;
 }

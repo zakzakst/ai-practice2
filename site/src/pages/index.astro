@@ -2,8 +2,10 @@
 import Layout from "@layouts/Layout.astro";
 import Breadcrumbs from "@components/common/Breadcrumbs.astro";
 import Button from "@components/common/Button.astro";
+import ButtonLink from "@components/common/ButtonLink.astro";
 import Divider from "@components/common/Divider.astro";
 import Link from "@components/common/Link.astro";
+import Spacer from "@components/common/Spacer.astro";
 ---
 
 <Layout title="トップページ" description="トップページの概要">
@@ -29,4 +31,27 @@ import Link from "@components/common/Link.astro";
     ]}
   />
   <Button>button</Button>
+  <Button aria-disabled>button</Button>
+  <Button variant="outline">button</Button>
+  <Button variant="outline" aria-disabled>button</Button>
+  <Button variant="text">button</Button>
+  <Button variant="text" aria-disabled>button</Button>
+  <Button>button</Button>
+  <Button size="lg">button</Button>
+  <Button size="md">button</Button>
+  <Button size="sm">button</Button>
+  <Button size="xs">button</Button>
+
+  <ButtonLink href="#" class:list={["hoge", "fuga"]}>button</ButtonLink>
+  <ButtonLink aria-disabled>button</ButtonLink>
+  <ButtonLink href="#" variant="outline">button</ButtonLink>
+  <ButtonLink variant="outline" aria-disabled>button</ButtonLink>
+  <ButtonLink href="#" variant="text">button</ButtonLink>
+  <ButtonLink variant="text" aria-disabled>button</ButtonLink>
+  <ButtonLink href="#">button</ButtonLink>
+  <ButtonLink href="#" size="lg">button</ButtonLink>
+  <ButtonLink href="#" size="md">button</ButtonLink>
+  <ButtonLink href="#" size="sm">button</ButtonLink>
+  <ButtonLink href="#" size="xs">button</ButtonLink>
+  <Spacer />
 </Layout>

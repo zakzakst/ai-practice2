@@ -1,0 +1,26 @@
+---
+import "@styles/common/button.css";
+
+import type { HTMLAttributes } from "astro/types";
+
+export type ButtonLinkVariant = "solid-fill" | "outline" | "text";
+export type ButtonLinkSize = "lg" | "md" | "sm" | "xs";
+
+interface Props extends HTMLAttributes<"a"> {
+  variant?: ButtonLinkVariant;
+  size?: ButtonLinkSize;
+}
+const {
+  variant = "solid-fill",
+  size = "md",
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<a
+  class:list={["common-button", className]}
+  data-variant={variant}
+  data-size={size}
+  {...rest}><slot /></a
+>
