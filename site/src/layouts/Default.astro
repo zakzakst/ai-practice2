@@ -1,8 +1,12 @@
 ---
 import "@styles/global.css";
+import "@styles/layouts/default.css";
 
 import { SiteDescription, SiteName } from "@lib/constants";
+import type { LinkItem } from "@lib/types";
 import { getRootRelativePath } from "@lib/utils";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import Container from "@components/common/Container.astro";
 import Footer from "@components/common/Footer.astro";
 import GoTopButton from "@components/common/GoTopButton.astro";
 import Header from "@components/common/Header.astro";
@@ -11,8 +15,10 @@ import PageProgressBar from "@components/common/PageProgressBar.astro";
 interface Props {
   title?: string;
   description?: string;
+  // TODO: OGP関連の設定
+  breadcrumbs?: LinkItem[];
 }
-const { title, description } = Astro.props;
+const { title, description, breadcrumbs } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,12 +36,34 @@ const { title, description } = Astro.props;
     <meta name="description" content={description || SiteDescription} />
     <title>{title ? `${title} | ${SiteName}` : SiteName}</title>
   </head>
-  <body>
+  <body class="layouts-default">
     <PageProgressBar />
     <Header />
-    <main>
-      <slot />
-      <GoTopButton aria-disabled />
+    <main class="layouts-default__main">
+      {
+        breadcrumbs && (
+          <div class="layouts-default__breadcrumbs">
+            <Container>
+              <Breadcrumbs items={breadcrumbs} />
+            </Container>
+          </div>
+        )
+      }
+      <Container>
+        <slot />
+        <div class="layouts-default__go-top-button">
+          <GoTopButton />
+        </div>
+      </Container>
+      {
+        breadcrumbs && (
+          <div class="layouts-default__breadcrumbs" data-position="bottom">
+            <Container>
+              <Breadcrumbs items={breadcrumbs} />
+            </Container>
+          </div>
+        )
+      }
     </main>
     <Footer />
   </body>

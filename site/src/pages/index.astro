@@ -1,6 +1,5 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import Layout from "@layouts/Default.astro";
 import Button from "@components/common/Button.astro";
 import ButtonLink from "@components/common/ButtonLink.astro";
 import Divider from "@components/common/Divider.astro";
@@ -8,7 +7,20 @@ import Link from "@components/common/Link.astro";
 import Spacer from "@components/common/Spacer.astro";
 ---
 
-<Layout title="トップページ" description="トップページの概要">
+<Layout
+  title="トップページ"
+  description="トップページの概要"
+  breadcrumbs={[
+    {
+      path: "/",
+      label: "TOP",
+    },
+    {
+      path: "/hoge",
+      label: "HOGE",
+    },
+  ]}
+>
   トップページ<Link class="aaa" href="/test" target="_blank">テキスト</Link
   >文中のリンク
   <br />
@@ -18,18 +30,6 @@ import Spacer from "@components/common/Spacer.astro";
   <Divider color="gray-light" />
   <Divider color="gray" />
   <p>{import.meta.env.DOMAIN}</p>
-  <Breadcrumbs
-    items={[
-      {
-        path: "/",
-        label: "TOP",
-      },
-      {
-        path: "/hoge",
-        label: "HOGE",
-      },
-    ]}
-  />
   <Button>button</Button>
   <Button aria-disabled>button</Button>
   <Button variant="outline">button</Button>

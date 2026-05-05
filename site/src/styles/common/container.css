@@ -1,0 +1,16 @@
+.common-container {
+  padding-inline: 1em;
+  margin-inline: auto;
+
+  &[data-size="lg"] {
+    max-width: 1024px;
+  }
+
+  &[data-size="md"] {
+    max-width: 768px;
+  }
+
+  &[data-size="sm"] {
+    max-width: 640px;
+  }
+}
