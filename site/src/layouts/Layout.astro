@@ -4,6 +4,7 @@ import "@styles/global.css";
 import { SiteDescription, SiteName } from "@lib/constants";
 import { getRootRelativePath } from "@lib/utils";
 import Footer from "@components/common/Footer.astro";
+import GoTopButton from "@components/common/GoTopButton.astro";
 import Header from "@components/common/Header.astro";
 import PageProgressBar from "@components/common/PageProgressBar.astro";
 
@@ -34,6 +35,7 @@ const { title, description } = Astro.props;
     <Header />
     <main>
       <slot />
+      <GoTopButton aria-disabled />
     </main>
     <Footer />
   </body>

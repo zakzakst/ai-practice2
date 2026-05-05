@@ -11,5 +11,4 @@
 - https://design.digital.go.jp/dads/react/?path=/docs/documents-はじめに--docs
 - ファイル作成したタイミングでeslint設定する
   - https://github.com/ota-meshi/eslint-plugin-astro
-- スクロール量を表示するプログレスバー
 - パララックスになる画像

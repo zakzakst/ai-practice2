@@ -1,0 +1,22 @@
+---
+import "@styles/common/go-top-button.css";
+
+import type { HTMLAttributes } from "astro/types";
+import { ArrowUp } from "@lucide/astro";
+
+interface Props extends HTMLAttributes<"button"> {}
+const { "aria-label": ariaLabel, class: className, ...rest } = Astro.props;
+---
+
+<script>
+  import { initGoTopButton } from "@scripts/common/go-top-button";
+
+  initGoTopButton();
+</script>
+
+<button
+  id="go-top-button"
+  class:list={["common-go-top-button", className]}
+  aria-label={ariaLabel || "コンテンツトップに移動する"}
+  {...rest}><ArrowUp class="common-go-top-button__icon" /></button
+>

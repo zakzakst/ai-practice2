@@ -1,5 +1,5 @@
 ---
-to: 'src/components/<%= page %>/<%= h.capitalize(component) %>.astro'
+to: 'src/components/<%= page %>/<%= h.changeCase.pascal(component) %>.astro'
 ---
 
 ---
