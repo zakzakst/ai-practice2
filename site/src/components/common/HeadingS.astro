@@ -1,0 +1,18 @@
+---
+import "@styles/common/heading-s.css";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<
+  "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+> {
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+const { tag, class: className, ...rest } = Astro.props;
+// NOTE: 小文字のままだと<h2>とかに変換されず、<tag>のまま出力されたため、変更している
+const Tag = tag;
+---
+
+<Tag class:list={["common-heading-s", className]} {...rest}>
+  <slot />
+</Tag>
