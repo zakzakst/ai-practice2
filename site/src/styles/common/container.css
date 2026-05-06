@@ -4,14 +4,14 @@
   margin-inline: auto;
 
   &[data-size="lg"] {
-    max-width: 1024px;
+    max-width: var(--media-width-lg);
   }
 
   &[data-size="md"] {
-    max-width: 768px;
+    max-width: var(--media-width-md);
   }
 
   &[data-size="sm"] {
-    max-width: 640px;
+    max-width: var(--media-width-sm);
   }
 }

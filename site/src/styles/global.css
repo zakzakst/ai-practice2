@@ -30,6 +30,11 @@
     --bg-color-primary-active: #000060;
     --bg-color-primary-active-light: #9db7f9;
     --bg-color-disabled: #b3b3b3;
+
+    /* TODO: 考える。メディアクエリには利用できなかったので不要かもしれない */
+    --media-width-lg: 1024px;
+    --media-width-md: 768px;
+    --media-width-sm: 640px;
   }
 }
 
