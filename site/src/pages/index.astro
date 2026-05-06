@@ -4,6 +4,9 @@ import Accordion from "@components/common/Accordion.astro";
 import Button from "@components/common/Button.astro";
 import ButtonLink from "@components/common/ButtonLink.astro";
 import Divider from "@components/common/Divider.astro";
+import HeadingL from "@components/common/HeadingL.astro";
+import HeadingM from "@components/common/HeadingM.astro";
+import HeadingS from "@components/common/HeadingS.astro";
 import Link from "@components/common/Link.astro";
 import Spacer from "@components/common/Spacer.astro";
 ---
@@ -66,5 +69,11 @@ import Spacer from "@components/common/Spacer.astro";
     <Fragment slot="summary">アコーディオン</Fragment>
     <p>コンテンツ</p>
   </Accordion>
+  <HeadingL tag="h2" class="custom-class">HeadingL</HeadingL>
+  <HeadingL tag="h3" class="custom-class">HeadingL</HeadingL>
+  <HeadingM tag="h2" class="custom-class">HeadingM</HeadingM>
+  <HeadingM tag="h3" class="custom-class">HeadingM</HeadingM>
+  <HeadingS tag="h2" class="custom-class">HeadingS</HeadingS>
+  <HeadingS tag="h3" class="custom-class">HeadingS</HeadingS>
   <Spacer />
 </Layout>

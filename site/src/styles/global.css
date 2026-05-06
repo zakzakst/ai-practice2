@@ -33,6 +33,7 @@
   }
 }
 
+/* TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した） */
 *,
 *::before,
 *::after {
