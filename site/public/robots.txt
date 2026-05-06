@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zakzakst.github.io/ai-practice2/sitemap-index.xml

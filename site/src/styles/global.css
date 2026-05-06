@@ -33,7 +33,10 @@
   }
 }
 
-/* TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した） */
+/*
+TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した）
+⇒逆か？対象のコンポーネントのみに絞るようにする？notでなく
+*/
 *,
 *::before,
 *::after {

@@ -32,6 +32,7 @@ const { title, description, ogImage, breadcrumbs } = Astro.props;
       href={getRootRelativePath("/favicon.svg")}
     />
     <link rel="icon" href={getRootRelativePath("/favicon.ico")} />
+    <link rel="sitemap" href={getRootRelativePath("/sitemap-index.xml")} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description || SiteDescription} />
     <meta property="og:locale" content="ja_JP" />
