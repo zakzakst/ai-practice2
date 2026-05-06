@@ -1,0 +1,30 @@
+---
+import { getRootRelativePath } from "@lib/utils";
+
+const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
+type PostInfo = {
+  id: string;
+  frontmatter: any;
+};
+const postInfos: PostInfo[] = allPosts.map((post: any) => {
+  // TODO: 前の記事と次の記事のidもデータに含めたい
+  const id = post.file
+    .split("/")
+    .pop()
+    .replace(/\.[^/.]+$/, "");
+  return {
+    id,
+    frontmatter: post.frontmatter,
+  };
+});
+---
+
+<ul>
+  {
+    postInfos.map((info) => (
+      <li>
+        <a href={getRootRelativePath(`/posts/${info.id}`)}>{info.id}</a>
+      </li>
+    ))
+  }
+</ul>

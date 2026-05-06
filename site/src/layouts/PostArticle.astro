@@ -1,0 +1,55 @@
+---
+import "@styles/global.css";
+import "github-markdown-css/github-markdown-light.css";
+
+import { SiteDescription, SiteName } from "@lib/constants";
+import { getRootRelativePath } from "@lib/utils";
+import Container from "@components/common/Container.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+const { title, description, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={getRootRelativePath("/favicon.svg")}
+    />
+    <link rel="icon" href={getRootRelativePath("/favicon.ico")} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description || SiteDescription} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description || SiteDescription} />
+    <meta
+      property="og:title"
+      content={title ? `${title} | ${SiteName}` : SiteName}
+    />
+    <meta
+      property="og:url"
+      content={`${import.meta.env.DOMAIN}${import.meta.env.BASE}`}
+    />
+    <meta
+      property="og:image"
+      content={getRootRelativePath(ogImage || "/images/ogp.png")}
+    />
+    <meta property="og:site_title" content={SiteName} />
+    <title>{title ? `${title} | ${SiteName}` : SiteName}</title>
+  </head>
+  <body>
+    <main class="markdown-body">
+      <Container>
+        <slot />
+      </Container>
+    </main>
+  </body>
+</html>
