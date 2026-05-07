@@ -1,0 +1,17 @@
+---
+import "@styles/posts/hero.css";
+
+interface Props {
+  title: string;
+  category: string;
+  date: string;
+  image: string;
+}
+const { title, category, date, image } = Astro.props;
+---
+
+<div class="posts-hero">
+  <img src={image} alt="" />
+  <p>{category} ／ {date}</p>
+  <h1>{title}</h1>
+</div>
