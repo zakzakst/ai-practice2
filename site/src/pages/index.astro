@@ -1,4 +1,5 @@
 ---
+import { getRootRelativePath } from "@lib/utils";
 import Layout from "@layouts/Default.astro";
 import Accordion from "@components/common/Accordion.astro";
 import Button from "@components/common/Button.astro";
@@ -8,6 +9,7 @@ import HeadingL from "@components/common/HeadingL.astro";
 import HeadingM from "@components/common/HeadingM.astro";
 import HeadingS from "@components/common/HeadingS.astro";
 import Link from "@components/common/Link.astro";
+import ParallaxImage from "@components/common/ParallaxImage.astro";
 import Spacer from "@components/common/Spacer.astro";
 ---
 
@@ -75,5 +77,12 @@ import Spacer from "@components/common/Spacer.astro";
   <HeadingM tag="h3" class="custom-class">HeadingM</HeadingM>
   <HeadingS tag="h2" class="custom-class">HeadingS</HeadingS>
   <HeadingS tag="h3" class="custom-class">HeadingS</HeadingS>
+  <div>
+    <ParallaxImage src={getRootRelativePath("/images/sample.png")} alt="" />
+  </div>
+  <Spacer />
+  <div>
+    <ParallaxImage src={getRootRelativePath("/images/sample.png")} alt="" />
+  </div>
   <Spacer />
 </Layout>

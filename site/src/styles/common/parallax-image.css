@@ -1,0 +1,31 @@
+/* NOTE: 親要素に`over-flow: hidden;`が効いている状態だと動かなくなった。使う場所に気を付ける */
+.common-parallax-image {
+  width: 100%;
+  overflow: hidden;
+  view-timeline-name: --common-parallax-image;
+}
+
+.common-parallax-image__inner {
+  width: 100%;
+  height: calc(100% + 100px);
+  margin-top: -100px;
+  animation: common-parallax-image-parallax linear both;
+  animation-timeline: --common-parallax-image;
+  animation-range: cover 0% cover 100%;
+}
+
+.common-parallax-image__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes common-parallax-image-parallax {
+  0% {
+    translate: 0 100px;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
