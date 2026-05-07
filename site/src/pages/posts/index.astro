@@ -1,20 +1,24 @@
 ---
-import { getRootRelativePath } from "@lib/utils";
 import Layout from "@layouts/Default.astro";
+import PostList from "@components/posts/PostList.astro";
 
 const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
-type PostInfo = {
+type Post = {
   id: string;
-  frontmatter: any;
+  title: string;
+  date: string;
+  category: string;
 };
-const postInfos: PostInfo[] = allPosts.map((post: any) => {
+const posts: Post[] = allPosts.map((post: any) => {
   const id = post.file
     .split("/")
     .pop()
     .replace(/\.[^/.]+$/, "");
   return {
     id,
-    frontmatter: post.frontmatter,
+    title: post.frontmatter.title,
+    date: post.frontmatter.date,
+    category: post.frontmatter.category,
   };
 });
 ---
@@ -33,15 +37,5 @@ const postInfos: PostInfo[] = allPosts.map((post: any) => {
     },
   ]}
 >
-  <ul>
-    {
-      postInfos.map((info) => (
-        <li>
-          <a href={getRootRelativePath(`/posts/${info.id}`)}>
-            {info.frontmatter.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <PostList posts={posts} />
 </Layout>

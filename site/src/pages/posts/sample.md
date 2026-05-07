@@ -2,6 +2,9 @@
 layout: "@layouts/PostArticle.astro"
 title: サンプル記事のタイトル
 description: サンプル記事の概要
+date: "2026-01-01"
+category: お知らせ
+image: https://placehold.jp/1200x630.png
 ---
 
 ## 見出し
