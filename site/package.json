@@ -16,6 +16,7 @@
     "prettier": "prettier . --write",
     "htmlhint": "htmlhint ./dist/**/*.html",
     "tsc": "tsc",
+    "image-build": "node node-scripts/image-build.mjs",
     "deploy": "gh-pages -d dist --nojekyll"
   },
   "dependencies": {
@@ -31,12 +32,14 @@
     "eslint": "^10.3.0",
     "gh-pages": "^6.3.0",
     "github-markdown-css": "^5.9.0",
+    "glob": "^13.0.6",
     "globals": "^17.6.0",
     "htmlhint": "^1.9.2",
     "hygen": "^6.2.11",
     "jiti": "^2.7.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
+    "sharp": "^0.34.5",
     "stylelint": "^17.10.0",
     "stylelint-config-recess-order": "^7.7.0",
     "stylelint-config-standard": "^40.0.0",
