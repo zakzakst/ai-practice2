@@ -2,5 +2,30 @@
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+  padding-top: var(--page-progress-bar-height);
   background-color: var(--bg-color-white);
+}
+
+.common-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.common-header-nav {
+  @media screen and (width <= 768px) {
+    display: none;
+  }
+}
+
+.common-header-nav__items {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.common-header-menu-button {
+  @media screen and (width > 768px) {
+    display: none;
+  }
 }

@@ -3,7 +3,7 @@
   inset-inline: 0;
   top: 0;
   z-index: calc(var(--z-header) + 1);
-  height: 6px;
+  height: var(--page-progress-bar-height);
   background-color: var(--bg-color-white);
 }
 
