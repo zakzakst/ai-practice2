@@ -1,5 +1,6 @@
 ---
 import { getRootRelativePath } from "@lib/utils";
+import Layout from "@layouts/Default.astro";
 
 const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
 type PostInfo = {
@@ -7,7 +8,6 @@ type PostInfo = {
   frontmatter: any;
 };
 const postInfos: PostInfo[] = allPosts.map((post: any) => {
-  // TODO: 前の記事と次の記事のidもデータに含めたい
   const id = post.file
     .split("/")
     .pop()
@@ -19,12 +19,29 @@ const postInfos: PostInfo[] = allPosts.map((post: any) => {
 });
 ---
 
-<ul>
-  {
-    postInfos.map((info) => (
-      <li>
-        <a href={getRootRelativePath(`/posts/${info.id}`)}>{info.id}</a>
-      </li>
-    ))
-  }
-</ul>
+<Layout
+  title="記事一覧ページ"
+  description="記事一覧ページの概要"
+  breadcrumbs={[
+    {
+      path: "/",
+      label: "TOP",
+    },
+    {
+      path: "/posts",
+      label: "記事一覧",
+    },
+  ]}
+>
+  <ul>
+    {
+      postInfos.map((info) => (
+        <li>
+          <a href={getRootRelativePath(`/posts/${info.id}`)}>
+            {info.frontmatter.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

@@ -1,6 +1,7 @@
 ---
 import "@styles/common/header.css";
 
+import Link from "@/components/common/Link.astro";
 import { Menu, X } from "@lucide/astro";
 
 import type { LinkItem } from "@lib/types";
@@ -29,13 +30,8 @@ const items: LinkItem[] = [
       <ul class="common-header-nav__items">
         {
           items.map((item) => (
-            <li class="common-header-nav__item">
-              <a
-                class="common-header-nav__link"
-                href={getRootRelativePath(item.path)}
-              >
-                {item.label}
-              </a>
+            <li>
+              <Link href={getRootRelativePath(item.path)}>{item.label}</Link>
             </li>
           ))
         }
@@ -59,12 +55,12 @@ const items: LinkItem[] = [
         {
           items.map((item) => (
             <li class="common-header-menu-nav__item">
-              <a
+              <Link
                 class="common-header-menu-nav__link"
                 href={getRootRelativePath(item.path)}
               >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))
         }
