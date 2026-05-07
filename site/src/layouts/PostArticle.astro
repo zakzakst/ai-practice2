@@ -1,17 +1,34 @@
 ---
 import "@styles/global.css";
+import "@styles/layouts/default.css";
 import "github-markdown-css/github-markdown-light.css";
 
 import { SiteDescription, SiteName } from "@lib/constants";
+import type { LinkItem } from "@lib/types";
 import { getRootRelativePath } from "@lib/utils";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
 import Container from "@components/common/Container.astro";
+import Footer from "@components/common/Footer.astro";
+import GoTopButton from "@components/common/GoTopButton.astro";
+import Header from "@components/common/Header.astro";
+import PageProgressBar from "@components/common/PageProgressBar.astro";
 
-interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: string;
-}
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage } = Astro.props.frontmatter;
+
+const breadcrumbs: LinkItem[] = [
+  {
+    path: "/",
+    label: "TOP",
+  },
+  {
+    path: "/posts",
+    label: "記事一覧",
+  },
+  {
+    path: "",
+    label: title || "",
+  },
+];
 ---
 
 <!doctype html>
@@ -45,11 +62,32 @@ const { title, description, ogImage } = Astro.props;
     <meta property="og:site_title" content={SiteName} />
     <title>{title ? `${title} | ${SiteName}` : SiteName}</title>
   </head>
-  <body>
-    <main class="markdown-body">
-      <Container>
-        <slot />
+  <body class="layouts-default">
+    <PageProgressBar />
+    <Header />
+    <main class="layouts-default__main">
+      <div class="layouts-default__breadcrumbs">
+        <Container size="md">
+          <Breadcrumbs items={breadcrumbs} />
+        </Container>
+      </div>
+      <Container size="md">
+        <div class="markdown-body">
+          <slot />
+        </div>
+        <div class="layouts-default__go-top-button">
+          <GoTopButton />
+        </div>
       </Container>
+      <div class="layouts-default__breadcrumbs" data-position="bottom">
+        <Container size="md">
+          <Breadcrumbs items={breadcrumbs} />
+        </Container>
+      </div>
     </main>
+    <Footer />
   </body>
+  <script>
+    import "@scripts/layouts/default";
+  </script>
 </html>

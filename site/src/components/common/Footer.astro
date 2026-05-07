@@ -1,5 +1,38 @@
 ---
 import "@styles/common/footer.css";
+
+import Link from "@/components/common/Link.astro";
+
+import type { LinkItem } from "@lib/types";
+import { getRootRelativePath } from "@lib/utils";
+
+const items: LinkItem[] = [
+  {
+    path: "/posts",
+    label: "記事一覧",
+  },
+  {
+    path: "/",
+    label: "ページ名",
+  },
+  {
+    path: "/",
+    label: "ページ名",
+  },
+];
 ---
 
-<footer>フッター</footer>
+<footer class="common-footer">
+  <nav>
+    <ul class="common-footer-nav__items">
+      {
+        items.map((item) => (
+          <li>
+            <Link href={getRootRelativePath(item.path)}>{item.label}</Link>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <p class="common-footer-copy">© 2026 Sample inc.</p>
+</footer>

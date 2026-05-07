@@ -1,3 +1,15 @@
-.footer {
-  color: red;
+.common-footer {
+  padding: 24px 16px;
+}
+
+.common-footer-nav__items {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.common-footer-copy {
+  margin-top: 16px;
+  text-align: center;
 }
