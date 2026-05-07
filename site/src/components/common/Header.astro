@@ -1,5 +1,79 @@
 ---
 import "@styles/common/header.css";
+
+import { Menu, X } from "@lucide/astro";
+
+import type { LinkItem } from "@lib/types";
+import { getRootRelativePath } from "@lib/utils";
+
+const items: LinkItem[] = [
+  {
+    path: "/posts",
+    label: "記事一覧",
+  },
+  {
+    path: "/",
+    label: "ページ名",
+  },
+  {
+    path: "/",
+    label: "ページ名",
+  },
+];
 ---
 
-<header class="common-header">ヘッダー</header>
+<header class="common-header">
+  <div class="common-header__inner">
+    <a class="common-header-logo" href={getRootRelativePath("/")}>ロゴ</a>
+    <nav class="common-header-nav">
+      <ul class="common-header-nav__items">
+        {
+          items.map((item) => (
+            <li class="common-header-nav__item">
+              <a
+                class="common-header-nav__link"
+                href={getRootRelativePath(item.path)}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <button
+      id="common-header-menu-button"
+      class="common-header-menu-button"
+      aria-label="メニューを開く"
+    >
+      <Menu class="common-header-menu-button__icon" />
+    </button>
+  </div>
+</header>
+
+<!-- TODO: 調べる。dialogタグの使い方 -->
+<dialog id="common-header-menu" class="common-header-menu">
+  <div class="common-header-menu__content">
+    <nav class="common-header-menu-nav">
+      <ul class="common-header-menu-nav__items">
+        {
+          items.map((item) => (
+            <li class="common-header-menu-nav__item">
+              <a
+                class="common-header-menu-nav__link"
+                href={getRootRelativePath(item.path)}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <button
+      id="common-header-menu__close-button"
+      class="common-header-menu__close-button"
+      aria-label="メニューを開く"><X /></button
+    >
+  </div>
+</dialog>

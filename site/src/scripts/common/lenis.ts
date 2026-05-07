@@ -1,8 +1,7 @@
 import Lenis from "lenis";
 
-export const initLenis = () => {
-  // TODO: ストップすることとかを考えるとlenisをreturnで返したほうがいいか？
-  const lenis = new Lenis();
+export const initLenis = (): Lenis => {
+  const lenis: Lenis = new Lenis();
 
   function raf(time: number) {
     lenis.raf(time);
@@ -10,4 +9,6 @@ export const initLenis = () => {
   }
 
   requestAnimationFrame(raf);
+
+  return lenis;
 };

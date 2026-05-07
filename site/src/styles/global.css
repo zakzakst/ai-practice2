@@ -35,13 +35,15 @@
     --container-width-lg: 1024px;
     --container-width-md: 768px;
     --container-width-sm: 640px;
+
+    /* その他 */
+    --page-progress-bar-height: 6px;
   }
 }
 
-/*
-TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した）
-⇒逆か？対象のコンポーネントのみに絞るようにする？notでなく
-*/
+/* TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した）⇒逆か？対象のコンポーネントのみに絞るようにする？notでなく */
+
+/* TODO: 考える。:where(button)とかにしたほうがいい？※CSSの詳細度の関係で */
 *,
 *::before,
 *::after {
@@ -74,6 +76,8 @@ ol {
 button {
   text-transform: none;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
 }
 
 img,
