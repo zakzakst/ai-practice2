@@ -1,0 +1,17 @@
+---
+import "@styles/common/parallax-image.css";
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  src: string;
+  alt: string;
+}
+const { src, alt, class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["common-parallax-image", className]} {...rest}>
+  <div class="common-parallax-image__inner">
+    <img class="common-parallax-image__image" src={src} alt={alt} />
+  </div>
+</div>
