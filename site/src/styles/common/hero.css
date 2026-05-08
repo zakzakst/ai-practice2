@@ -1,8 +1,8 @@
-.posts-hero {
+.common-hero {
   padding-block: 24px;
 }
 
-.posts-hero__image {
+.common-hero__image {
   aspect-ratio: 16 / 9;
 
   > img {
@@ -12,11 +12,6 @@
   }
 }
 
-.posts-hero__info {
-  margin-top: 16px;
-  text-align: center;
-}
-
-.posts-hero__title {
+.common-hero__title {
   text-align: center;
 }

@@ -1,1 +1,15 @@
 /* .posts-post-list {} */
+
+.posts-post-list__items {
+  display: grid;
+  grid-template-columns: max-content max-content 1fr;
+}
+
+.posts-post-list__item {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: span 3;
+  gap: 20px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--border-color-gray);
+}

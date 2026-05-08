@@ -11,7 +11,9 @@ const { title, category, date, image } = Astro.props;
 ---
 
 <div class="posts-hero">
-  <img src={image} alt="" />
-  <p>{category} ／ {date}</p>
-  <h1>{title}</h1>
+  <div class="posts-hero__image">
+    <img src={image} alt="" />
+  </div>
+  <p class="posts-hero__info">{category} ／ {date}</p>
+  <h1 class="posts-hero__title">{title}</h1>
 </div>
