@@ -39,3 +39,35 @@
     display: none;
   }
 }
+
+/* メニューダイアログのスタイル */
+.common-header-menu {
+  min-width: 200px;
+  padding: 16px;
+  background-color: var(--bg-color-white);
+  border: none;
+  border-radius: 8px;
+}
+
+.common-header-menu__head {
+  display: grid;
+  justify-content: end;
+}
+
+.common-header-menu__close-button {
+  display: inline-grid;
+  place-content: center;
+  padding: 2px;
+  border: 1px solid var(--border-color-gray);
+}
+
+.common-header-menu__content {
+  margin-top: 16px;
+}
+
+.common-header-menu-nav__items {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  text-align: center;
+}
