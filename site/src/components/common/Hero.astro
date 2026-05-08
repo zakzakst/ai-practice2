@@ -1,0 +1,16 @@
+---
+import "@styles/common/hero.css";
+
+interface Props {
+  title: string;
+  image: string;
+}
+const { title, image } = Astro.props;
+---
+
+<div class="common-hero">
+  <div class="common-hero__image">
+    <img src={image} alt="" />
+  </div>
+  <h1 class="common-hero__title">{title}</h1>
+</div>

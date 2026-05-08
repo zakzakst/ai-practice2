@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Default.astro";
+import Hero from "@components/common/Hero.astro";
 import PostList from "@components/posts/PostList.astro";
 
 const allPosts = Object.values(import.meta.glob("./*.md", { eager: true }));
@@ -37,5 +38,6 @@ const posts: Post[] = allPosts.map((post: any) => {
     },
   ]}
 >
+  <Hero image="https://placehold.jp/1600x900.png" title="記事一覧" />
   <PostList posts={posts} />
 </Layout>

@@ -2,6 +2,7 @@
 import "@styles/posts/post-list.css";
 
 import { getRootRelativePath } from "@lib/utils";
+import Link from "@components/common/Link.astro";
 
 type Post = {
   id: string;
@@ -16,13 +17,15 @@ const { posts } = Astro.props;
 ---
 
 <div class="posts-post-list">
-  <ul>
+  <ul class="posts-post-list__items">
     {
       posts.map((post) => (
-        <li>
-          <a href={getRootRelativePath(`/posts/${post.id}`)}>
-            {post.date} ／ {post.category} ／ {post.title}
-          </a>
+        <li class="posts-post-list__item">
+          <span>{post.date}</span>
+          <span>{post.category}</span>
+          <Link href={getRootRelativePath(`/posts/${post.id}`)}>
+            {post.title}
+          </Link>
         </li>
       ))
     }
