@@ -59,15 +59,17 @@ const { title, description, ogImage, breadcrumbs } = Astro.props;
     <main class="layouts-default__main">
       {
         breadcrumbs && (
-          <div class="layouts-default__breadcrumbs">
+          <div class="layouts-default__breadcrumbs" data-position="top">
             <Container>
               <Breadcrumbs items={breadcrumbs} />
             </Container>
           </div>
         )
       }
-      <Container>
-        <slot />
+      <Container class="layouts-default__content">
+        <div>
+          <slot />
+        </div>
         <div class="layouts-default__go-top-button">
           <GoTopButton />
         </div>
