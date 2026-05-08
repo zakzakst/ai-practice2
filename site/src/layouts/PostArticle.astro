@@ -70,11 +70,13 @@ const breadcrumbs: LinkItem[] = [
         </Container>
       </div>
       <Container size="md">
-        <Hero title={title} date={date} category={category} image={image} />
-        <div class="markdown-body">
-          <slot />
+        <div>
+          <Hero title={title} date={date} category={category} image={image} />
+          <div class="markdown-body">
+            <slot />
+          </div>
         </div>
-        <div class="layouts-default__go-top-button">
+        <div class="layouts-default__go-top-button" data-position="top">
           <GoTopButton />
         </div>
       </Container>
