@@ -19,4 +19,4 @@ image: https://placehold.jp/1600x900.png
 - 項目
 - 項目
 
-<Image src='../../images/sample.png' alt="サンプル画像" />
+<Image src='../../images/sample.webp' alt="サンプル画像" />
