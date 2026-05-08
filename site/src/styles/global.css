@@ -42,8 +42,6 @@
   }
 }
 
-/* TODO: 調べる。markdown-body以外に適用する方法（whereとnot使って軽く試したが失敗した）⇒逆か？対象のコンポーネントのみに絞るようにする？notでなく */
-
 /* TODO: 考える。:where(button)とかにしたほうがいい？※CSSの詳細度の関係で */
 *,
 *::before,
@@ -90,4 +88,10 @@ video {
 
 a {
   text-decoration: none;
+}
+
+/* .markdown-bodyの子要素はresetのスタイルを無効にする */
+.markdown-body,
+.markdown-body * {
+  all: revert;
 }

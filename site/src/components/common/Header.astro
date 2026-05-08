@@ -18,7 +18,7 @@ const items: LinkItem[] = [
   },
   {
     path: "/",
-    label: "ページ名",
+    label: "ページ名2",
   },
 ];
 ---
@@ -49,6 +49,13 @@ const items: LinkItem[] = [
 
 <!-- TODO: 調べる。dialogタグの使い方 -->
 <dialog id="common-header-menu" class="common-header-menu">
+  <div class="common-header-menu__head">
+    <button
+      id="common-header-menu__close-button"
+      class="common-header-menu__close-button"
+      aria-label="メニューを開く"><X /></button
+    >
+  </div>
   <div class="common-header-menu__content">
     <nav class="common-header-menu-nav">
       <ul class="common-header-menu-nav__items">
@@ -66,10 +73,5 @@ const items: LinkItem[] = [
         }
       </ul>
     </nav>
-    <button
-      id="common-header-menu__close-button"
-      class="common-header-menu__close-button"
-      aria-label="メニューを開く"><X /></button
-    >
   </div>
 </dialog>
