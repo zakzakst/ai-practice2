@@ -1,5 +1,5 @@
 ---
-import Layout from "@layouts/Default.astro";
+import Layout from "@layouts/HasSidebar.astro";
 import Hero from "@components/common/Hero.astro";
 import PostList from "@components/posts/PostList.astro";
 
@@ -40,4 +40,5 @@ const posts: Post[] = allPosts.map((post: any) => {
 >
   <Hero image="https://placehold.jp/1600x900.png" title="記事一覧" />
   <PostList posts={posts} />
+  <Fragment slot="sidebar">sidebar</Fragment>
 </Layout>
