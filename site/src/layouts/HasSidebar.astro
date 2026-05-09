@@ -1,0 +1,100 @@
+---
+import "@styles/global.css";
+import "@styles/layouts/has-sidebar.css";
+
+import { SiteDescription, SiteName } from "@lib/constants";
+import type { LinkItem } from "@lib/types";
+import { getRootRelativePath } from "@lib/utils";
+import Breadcrumbs from "@components/common/Breadcrumbs.astro";
+import Container from "@components/common/Container.astro";
+import Footer from "@components/common/Footer.astro";
+import GoTopButton from "@components/common/GoTopButton.astro";
+import Header from "@components/common/Header.astro";
+import PageProgressBar from "@components/common/PageProgressBar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  breadcrumbs?: LinkItem[];
+}
+const { title, description, ogImage, breadcrumbs } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={getRootRelativePath("/favicon.svg")}
+    />
+    <link rel="icon" href={getRootRelativePath("/favicon.ico")} />
+    <link rel="sitemap" href={getRootRelativePath("/sitemap-index.xml")} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description || SiteDescription} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description || SiteDescription} />
+    <meta
+      property="og:title"
+      content={title ? `${title} | ${SiteName}` : SiteName}
+    />
+    <meta
+      property="og:url"
+      content={`${import.meta.env.DOMAIN}${import.meta.env.BASE}`}
+    />
+    <meta
+      property="og:image"
+      content={getRootRelativePath(ogImage || "/images/ogp.png")}
+    />
+    <meta property="og:site_title" content={SiteName} />
+    <title>{title ? `${title} | ${SiteName}` : SiteName}</title>
+  </head>
+  <body class="layouts-has-sidebar">
+    <PageProgressBar />
+    <Header />
+    <main class="layouts-has-sidebar__main">
+      {
+        breadcrumbs && (
+          <div class="layouts-has-sidebar__breadcrumbs" data-position="top">
+            <Container>
+              <Breadcrumbs items={breadcrumbs} />
+            </Container>
+          </div>
+        )
+      }
+      <Container class="layouts-has-sidebar__content">
+        <div class="layouts-has-sidebar__content-inner">
+          <div class="layouts-has-sidebar__content-main">
+            <slot />
+          </div>
+          <!-- TODO: layoutの作り考えなおす。htmlの構成的にasideの配置が間違っている -->
+          <div class="layouts-has-sidebar__aside">
+            <div class="layouts-has-sidebar__aside-inner">
+              <slot name="sidebar" />
+            </div>
+          </div>
+        </div>
+        <div class="layouts-has-sidebar__go-top-button">
+          <GoTopButton />
+        </div>
+      </Container>
+      {
+        breadcrumbs && (
+          <div class="layouts-has-sidebar__breadcrumbs" data-position="bottom">
+            <Container>
+              <Breadcrumbs items={breadcrumbs} />
+            </Container>
+          </div>
+        )
+      }
+    </main>
+    <Footer />
+  </body>
+  <script>
+    import "@scripts/layouts/default";
+  </script>
+</html>

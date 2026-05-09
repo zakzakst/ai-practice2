@@ -1,0 +1,62 @@
+.layouts-has-sidebar {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  min-height: 100vh;
+}
+
+.layouts-has-sidebar__main {
+  display: grid;
+  grid-template-areas:
+    "breadcrumb-top"
+    "content"
+    "breadcrumb-bottom";
+  grid-template-rows: max-content 1fr max-content;
+}
+
+.layouts-has-sidebar__breadcrumbs {
+  background-color: var(--bg-color-gray);
+
+  &[data-position="top"] {
+    grid-area: breadcrumb-top;
+  }
+
+  &[data-position="bottom"] {
+    grid-area: breadcrumb-bottom;
+  }
+}
+
+.layouts-has-sidebar__content {
+  display: grid;
+  grid-area: content;
+  grid-template-rows: 1fr max-content;
+}
+
+.layouts-has-sidebar__content-inner {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  gap: 24px;
+
+  @media screen and (width <= 768px) {
+    grid-template-columns: repeat(1, 100%);
+  }
+}
+
+.layouts-has-sidebar__aside {
+  position: relative;
+  padding-block: 24px;
+}
+
+.layouts-has-sidebar__aside-inner {
+  position: sticky;
+  top: 48px; /* TODO: ハードコーディングになっているが、ヘッダーの高さと連動した値にしたい */
+}
+
+.layouts-has-sidebar__go-top-button {
+  position: sticky;
+  bottom: 0;
+  left: calc(
+    100% - 2em
+  ); /* NOTE: right: 0 で意図した配置にならなかったため2em（ボタン幅）をハードコーディングして対応 */
+  width: fit-content;
+  padding-block: 1em;
+}
