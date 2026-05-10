@@ -23,6 +23,43 @@
 - 404ページの内容をきちんと作る
 - 500ページの内容をきちんと作る
 
+## アニメーションアイデア
+
+### ビジュアル訴求
+
+- https://www.matsuo-komuten.co.jp/
+- https://peaceput.com/
+- https://www.danbrise-barber.com/
+
+⇒セクション区切りのテクニック
+
+- 大胆なタイポグラフィ
+- 余白
+- 背景固定
+- 横スクロール
+
+### イラスト
+
+- https://tokachi-fruits.jp/
+
+⇒エンジニアができそうな提案
+
+- lottie
+- Webフォント
+
+### おちつき × カジュアル （情報を整理して見せつつ、固さを和らげる）
+
+- https://landsapporo.jp/
+- https://www.palcloset.jp/shared/pc_pal/event/palcloset/2026/spring_rinakawaei/
+
+⇒リニアなアニメーション
+
+### アクティブ × カジュアル
+
+- https://koba-clinic.jp/
+
+⇒バウンスなどのアニメーション
+
 ## 済
 
 - 記事ページの画像パスどうするか考える（一旦相対パス？）
